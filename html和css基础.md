@@ -2,7 +2,7 @@
 + 内容：html
 + 样式：css
 + 行为：js
-### html:超文本标记语言
+**html:超文本标记语言**
 ### html整体框架
 ```html
 <!DOCTYPE html>
