@@ -2,14 +2,14 @@
 * 内容：html
 * 样式：css
 * 行为：js
-### html:超文本标记语言
-#### html整体框架
+###html:超文本标记语言
+####html整体框架
 ```html
 <!DOCTYPE html>
 ```
 * 解析：DOCTYPE声明文档类型，以便验证文档是否符合文档类型定义（DTD）。如果你的页面添加了<!DOCTYPE html>那么，那么就等同于开启了标准模式，那么浏览器就得老老实实的按照W3C的标准解析渲染页面，这样一来，你的页面在所有的浏览器里显示的就都是一个样子了。
-+ HTML4支持的三种DOCTYPE声明分别是严格型（strict）、过渡型（transitional）和框架型（Frameset）。
-+ 浏览器使用两种基本的模式，怪异模式和标准模式。二者的区别在于前者不遵循CSS规范，后者遵循CSS规范。DOCTYPE声明会触发浏览器的标准模式。
++  HTML4支持的三种DOCTYPE声明分别是严格型（strict）、过渡型（transitional）和框架型（Frameset）。
++  浏览器使用两种基本的模式，怪异模式和标准模式。二者的区别在于前者不遵循CSS规范，后者遵循CSS规范。DOCTYPE声明会触发浏览器的标准模式。
 ```html
 <html lang="en">
 ```
