@@ -22,7 +22,7 @@
 ```
 + 解析：utf-8编码。当你没加这句的时候，网页中有中文字符，或许会导致浏览器的不同，使得中文字符出现
 
-##内容：html
+##内容(html)
 
 #### 常用的html标签
 + 标题标签 h1、h2、h3、h4、h5、h6
@@ -50,6 +50,48 @@
 </body>
 </html>	
 ```
+#### 标签分类
++ 块元素:(可独立成行，可设宽高) h   p   ul li
+
++ 行内/内联/行级元素(不可设宽高，不独立成行) a span
++ 行内块元素(不独立成行，可设宽高) img input
++  **注意：**可独立成行的想在一行，每个标签的CSS样式都加 float:left.不独立成行的想独立成行，标签的CSS样式加 display:block.
+
+#### 标签的属性
++ id class src alt href type 
+**注:**属性是用来描述标签的，人的属性有身高，体重...
+
+##样式(CSS)
+
+#### 　定义CSS样式 (三种方式)
+
++ 外部样式(使用link引入)
+```html
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+```
++内部样式
+```html
+<head>
+	<style type="text/css">
+		p{margin-left: 20px}
+	</style>	
+</head>
+```
++内联样式
+```html
+<p style="color:red; margin-left: 20px">This is a paragraph</p>
+```
+
+
+
+
+
+
+
+
+
 
 
 
