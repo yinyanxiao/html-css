@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*鼠标移动上去时变红*/
+		a:hover{
+			background-color: yellow;
+		}
+	/*未访问过的为黄色*/
+		a:link{
+			color:yellow;
+		}
+	/*访问过的为蓝色*/	
+		a:visited{
+			color:pink;
+		}
+	/*点击时为绿色*/
+		a:active{
+			color:green;
+			background-color: #000;
+		}
+	/*在h1标签前加太阳*/
+		h1:before{
+			content:"太阳";
+			color:red;
+			background-color: green;
+		}	
+		h1:after{content:"太阳"}	
+				
+				
+	</style>
+</head>
+<body>
+	<a href="http://baidu.com">百度</a>
+	<a href="http://163.com">网易</a>
+	<a href="http://3366.com">搜狐</a>
+	<h1>我向往的</h1>
+</body>
+</html>	
