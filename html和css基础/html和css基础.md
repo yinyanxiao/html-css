@@ -31,6 +31,7 @@
 + 段落标签 p
 + 超链接  a
 + 表单标签 form
++ span
 
  ```html
 <!DOCTYPE html>
@@ -54,14 +55,15 @@
 + 块元素:(可独立成行，可设宽高) h   p   ul li
 + 行内/内联/行级元素(不可设宽高，不独立成行) a span
 + 行内块元素(不独立成行，可设宽高) img input
-+ **注意：**可独立成行的想在一行，每个标签的CSS样式都加 float:left.不独立成行的想独立成行，标签的CSS样式加 display:block.
+
++ **注意：** 可独立成行的想在一行，每个标签的CSS样式都加 float:left.不独立成行的想独立成行，标签的CSS样式加 display:block.
 
 
 #### 标签的属性
 + id class src alt href type 
 ** 注:**属性是用来描述标签的，人的属性有身高，体重...
 
-##样式(CSS)
+## 样式(CSS)
 
 #### 　定义CSS样式 (css引入的三种方式)
 
@@ -190,21 +192,26 @@
 ```
 
 #### CSS2常用属性
-+ color、width、height、font-size、background-color
++ color、width、height、font-size、background-color、font-family、font-weight:bold(加粗)、
 + display:block(设置成块元素、显示)
 + display:none(隐藏)
 + float:left(浮动，两个块元素想在一行)
 + list-style:none(去li的点)
 + text-decoration:none(去a的下划线)
++ cursor:pointer(小手)
 + border 1px solid red;(solid实线，dashed虚线)
 + margin:100px 100px 100px 100px (上、右、下、左)
 + margin:100px 100px(上下[依上为主]、左右[依左为主])
-+ margin:0 auto(上下边距为0，左右边距相等)
++ text-align:center,left,right(盒内元素水平居中 不定宽元素居中)
++ margin:0 auto(上下边距为0，左右边距相等 不定宽元素居中)
 + margin:0 auto (块元素居中,例:想让盒子距离页面左右页边距相等)
 + line-height(行高，和height的值相等时，盒内元素垂直居中)
-+ text-align:center,left,right(盒内元素水平居中)
-+ 清浮动：子集元素浮动，父级元素高度不可以自适应(因为浮动后不占位)，则需要清浮动（清浮动后则盒子占位）就可以把不设高的大盒子撑开。
-+ <div class="clear"></div> 清浮动1
++ overflow:Hidden(内容多，盒子小，将超出去的内容隐藏起来)
++ overflow:auto(超出的部分有了下拉滑动块)
++ border-radius(圆角)
+
+#### 清浮动：子集元素浮动，父级元素高度不可以自适应(因为浮动后不占位)，则需要清浮动（清浮动后则盒子占位）就可以把不设高的大盒子撑开。
++ <div class="clear"></div> 清浮动1(不用)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -244,7 +251,7 @@
 </body>
 </html>
 ```
-+ .clearFix:before,.clearFix:after 清浮动2
++ .clearFix:before,.clearFix:after 清浮动2(直接在父级上清就OK)
 ```html
 <!DOCTYPE html>
 <html lang="zh">
@@ -279,13 +286,76 @@
 </body>
 </html>
 ```
+#### 颜渐变
++ **例：**实现的是一个渐变的header背景色
++ 首先在PS中切宽为1px的一张图片，保存为jpg,其次为以下代码：
+```html
+.header{
+	height:156px;
+	background-image:url(images/beijing_01.jpg);
+	background-repeat:repeat;/*横向平铺*/
+	background-repeat:repeat-y;/*纵向平铺*/
+}
+```
+#### 背景图片
+```html
+.container{
+	height:388px;/*不设宽，默认100%*/
+	background-image:url(images/c.jpg);
+	background-repeat:
+}
+```
+#### 使用图像来替换列表项的标记
+
++ (list-style-image  li前加小图标)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style-image: url("image/eye.jpg");
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>香蕉</li>
+		<li>鸭梨</li>
+		<li>橘子</li>
+	</ul>
+</body>
+</html>
+```
+#### 引入字体
+```html
+@font-face{
+	font-family:Chunk;
+	src:url(font/Chunk.otf);
+	}
+@font-face{
+	font-family:droid;
+	src:url(font/Droid.ttf);
+}
+@font-face{
+	font-family:helvet;
+	src:url(font/helvet.otf);
+
+}
+```
+#### 当给层内元素设置margin-top时，层内元素并没有margin，而是父层出现了margin-top，解决方法如下：
++ 1.给父层添加：overflow:hidden;
++ 2.给父层添加：border除none以外的属性
++ 3.给父层添加：padding-top代替margin-top的效果。
+
 #### CSS盒模型
 + css盒模型包括：内容(content)、填充(padding)、边框(border)、边界(margin)
 + **解释：**一个木头盒子，里面的东西是content，怕东西在运输的过程中磕坏，需要一些填充物泡沫padding,木头盒子是border,摆放时每个木头盒子之间的间距是margin.一般一个盒子在计算时是content+padding+border
 
 #### 选择器优先级
-
-+ 1.!important是提高属性的代先级 .div{height:100px!important}
++ 1.!important是提高属性的优先级，权重是1000 .div{height:100px!important}
 + 2.内联样式，级别为1000。<div style="color:Red;"></div>
 + 3.!important优先级高于内联样式
 + 4.id选择器,级别为100。#myDiv{color:Red;}
@@ -293,6 +363,9 @@
 + 6.标签选择器,级别是1。  div{color:Red;}
 + 7.通配符选择器最低
 + 8.优先级算法：.divClass  span { color:Red;}   优先级别就是：10+1=11
+
+
+
 
 
 
